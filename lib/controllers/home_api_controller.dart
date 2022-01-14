@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:news_app/pages/newsinfo.dart';
-import 'package:news_app/pages/string.dart';
+import 'package:news_app/models/models.dart';
+import 'package:news_app/controllers/string.dart';
 
-class API_Manager {
+class HomeController {
   Future<NewsModel?> getNews() async {
     var client = http.Client();
     var newsModel = null;

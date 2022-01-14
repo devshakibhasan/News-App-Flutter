@@ -1,48 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_new
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:http/http.dart' as http;
+import 'package:news_app/controllers/home_api_controller.dart';
+import 'package:news_app/models/models.dart';
+import 'package:news_app/views/news_page.dart';
 import 'dart:async';
-import 'dart:convert';
-import 'api_test.dart';
-import 'package:news_app/pages/api_manager.dart';
-import 'package:news_app/pages/newsinfo.dart';
-import 'post_model.dart';
-import 'string.dart';
-
-final List<String> imagesList = [
-  'https://cdn.pixabay.com/photo/2020/11/01/23/22/breakfast-5705180_1280.jpg',
-  'https://cdn.pixabay.com/photo/2020/11/01/23/22/breakfast-5705180_180.jpg',
-  'https://cdn.pixabay.com/photo/2019/01/14/17/25/gelato-3932596_1280.jpg',
-  'https://cdn.pixabay.com/photo/2017/04/04/18/07/ice-cream-2202561_1280.jpg',
-];
-
-final List<String> titles = [
-  ' Coffee ',
-  ' Bread ',
-  ' Gelato ',
-  ' Ice Cream ',
-];
-
-class API_Manager {
-  Future<NewsModel?> getNews() async {
-    var client = http.Client();
-    var newsModel = null;
-    try {
-      var response = await client.get(Uri.parse(Strings.news_url));
-
-      if (response.statusCode == 200) {
-        var jesonString = response.body;
-        var jsonMap = json.decode(jesonString);
-        newsModel = NewsModel.fromJson(jsonMap);
-      }
-    } catch (Exception) {
-      return newsModel;
-    }
-
-    return newsModel;
-  }
-}
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -56,17 +18,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    _newsModel = API_Manager().getNews();
+    _newsModel = HomeController().getNews();
     super.initState();
   }
 
+  // ignore: prefer_final_fields, unused_field
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 10,
       child: Scaffold(
-        
         appBar: AppBar(
           centerTitle: true,
           title: Text(
@@ -123,10 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: TabBarView(
           children: [
-            // This CustomScrollView display the Home tab content
             CustomScrollView(
               slivers: [
-                // Anther sliver widget: SliverList
                 SliverList(
                   delegate: SliverChildListDelegate(
                     [
@@ -154,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ),
                                       itemBuilder: (context, i, id) {
                                         var article = snapshot.data.articles[i];
-                                        //for onTap to redirect to another screen
+
                                         return GestureDetector(
                                           child: Stack(
                                             children: [
@@ -244,18 +204,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             )
                           ],
                         ),
-                        // child: FutureBuilder(
-                        //   future: _newsModel,
-                        //   builder:
-                        //       (BuildContext context, AsyncSnapshot snapshot) {
-                        //     if (snapshot.hasData) {
-                        //       return
-                        //     } else if (snapshot.hasError) {
-                        //       throw Exception("ERROR");
-                        //     }
-                        //     return Center(child: CircularProgressIndicator());
-                        //   },
-                        // ),
                       ),
 
                       Container(
@@ -290,7 +238,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                // Anther sliver widget: SliverList
                 SliverList(
                   delegate: SliverChildListDelegate([
                     Container(
@@ -303,7 +250,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             CustomScrollView(
               slivers: [
-                // Anther sliver widget: SliverList
                 SliverList(
                   delegate: SliverChildListDelegate([
                     Container(
@@ -324,10 +270,77 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
 
-            // This shows the Settings tab content
             CustomScrollView(
               slivers: [
-                // Show other sliver stuff
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      height: 600,
+                      color: Colors.blue[200],
+                      child: Center(
+                        child: Text(
+                          'Settings Tab',
+                          style: TextStyle(fontSize: 40),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 1200,
+                      color: Colors.pink,
+                    ),
+                  ]),
+                ),
+              ],
+            ),
+
+            CustomScrollView(
+              slivers: [
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      height: 600,
+                      color: Colors.blue[200],
+                      child: Center(
+                        child: Text(
+                          'Settings Tab',
+                          style: TextStyle(fontSize: 40),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 1200,
+                      color: Colors.pink,
+                    ),
+                  ]),
+                ),
+              ],
+            ),
+
+            CustomScrollView(
+              slivers: [
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      height: 600,
+                      color: Colors.blue[200],
+                      child: Center(
+                        child: Text(
+                          'Settings Tab',
+                          style: TextStyle(fontSize: 40),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 1200,
+                      color: Colors.pink,
+                    ),
+                  ]),
+                ),
+              ],
+            ),
+
+            CustomScrollView(
+              slivers: [
                 SliverList(
                   delegate: SliverChildListDelegate([
                     Container(
@@ -372,82 +385,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            // This shows the Settings tab content
+
             CustomScrollView(
               slivers: [
-                // Show other sliver stuff
-                SliverList(
-                  delegate: SliverChildListDelegate([
-                    Container(
-                      height: 600,
-                      color: Colors.blue[200],
-                      child: Center(
-                        child: Text(
-                          'Settings Tab',
-                          style: TextStyle(fontSize: 40),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 1200,
-                      color: Colors.pink,
-                    ),
-                  ]),
-                ),
-              ],
-            ),
-            // This shows the Settings tab content
-            CustomScrollView(
-              slivers: [
-                // Show other sliver stuff
-                SliverList(
-                  delegate: SliverChildListDelegate([
-                    Container(
-                      height: 600,
-                      color: Colors.blue[200],
-                      child: Center(
-                        child: Text(
-                          'Settings Tab',
-                          style: TextStyle(fontSize: 40),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 1200,
-                      color: Colors.pink,
-                    ),
-                  ]),
-                ),
-              ],
-            ),
-            // This shows the Settings tab content
-            CustomScrollView(
-              slivers: [
-                // Show other sliver stuff
-                SliverList(
-                  delegate: SliverChildListDelegate([
-                    Container(
-                      height: 600,
-                      color: Colors.blue[200],
-                      child: Center(
-                        child: Text(
-                          'Settings Tab',
-                          style: TextStyle(fontSize: 40),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 1200,
-                      color: Colors.pink,
-                    ),
-                  ]),
-                ),
-              ],
-            ),
-            // This shows the Settings tab content
-            CustomScrollView(
-              slivers: [
-                // Show other sliver stuff
                 SliverList(
                   delegate: SliverChildListDelegate([
                     Container(
@@ -498,131 +438,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-
-// class MyHomePage extends StatefulWidget {
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-//   // This function show the sliver app bar
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         bottom: TabBar(
-//             tabs: [
-//               Tab(text: "Flights", icon: Icon(Icons.flight),),
-//               Tab(text: "Trains", icon: Icon(Icons.train)),
-//               Tab(text: "Hotels",icon: Icon(Icons.restaurant)),
-//               Tab(text: "Hotels",icon: Icon(Icons.restaurant)),
-//             ],
-//           ),
-//       ),
-
-//         body: DefaultTabController(
-//       length: 4,
-//       child: TabBarView(children: [
-//         // This CustomScrollView display the Home tab content
-//         CustomScrollView(
-//           slivers: [
-
-//             // Anther sliver widget: SliverList
-//             SliverList(
-//               delegate: SliverChildListDelegate([
-//                 Container(
-//                   height: 400,
-//                   child: Center(
-//                     child: Text(
-//                       'Home Tab',
-//                       style: TextStyle(fontSize: 40),
-//                     ),
-//                   ),
-//                 ),
-//                 Container(
-//                   height: 1500,
-//                   color: Colors.green,
-//                 ),
-//               ]),
-//             ),
-//           ],
-//         ),
-//         CustomScrollView(
-//           slivers: [
-
-//             // Anther sliver widget: SliverList
-//             SliverList(
-//               delegate: SliverChildListDelegate([
-//                 Container(
-//                   height: 400,
-//                   child: Center(
-//                     child: Text(
-//                       'Home Tab',
-//                       style: TextStyle(fontSize: 40),
-//                     ),
-//                   ),
-//                 ),
-//                 Container(
-//                   height: 1500,
-//                   color: Colors.green,
-//                 ),
-//               ]),
-//             ),
-//           ],
-//         ),
-//         CustomScrollView(
-//           slivers: [
-
-//             // Anther sliver widget: SliverList
-//             SliverList(
-//               delegate: SliverChildListDelegate([
-//                 Container(
-//                   height: 400,
-//                   child: Center(
-//                     child: Text(
-//                       'Home Tab',
-//                       style: TextStyle(fontSize: 40),
-//                     ),
-//                   ),
-//                 ),
-//                 Container(
-//                   height: 1500,
-//                   color: Colors.green,
-//                 ),
-//               ]),
-//             ),
-//           ],
-//         ),
-
-//         // This shows the Settings tab content
-//         CustomScrollView(
-//           slivers: [
-
-//             // Show other sliver stuff
-//             SliverList(
-//               delegate: SliverChildListDelegate([
-//                 Container(
-//                   height: 600,
-//                   color: Colors.blue[200],
-//                   child: Center(
-//                     child: Text(
-//                       'Settings Tab',
-//                       style: TextStyle(fontSize: 40),
-//                     ),
-//                   ),
-//                 ),
-//                 Container(
-//                   height: 1200,
-//                   color: Colors.pink,
-//                 ),
-//               ]),
-//             ),
-//           ],
-//         )
-//       ]),
-//     ));
-//   }
-// }
