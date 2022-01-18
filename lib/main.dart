@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'routes/app_page_routes.dart';
-import 'routes/app_routes.dart';
+import 'src/routes/app_page_routes.dart';
+import 'src/routes/app_routes.dart';
 
 void main() => runApp(NewsApp());
 
