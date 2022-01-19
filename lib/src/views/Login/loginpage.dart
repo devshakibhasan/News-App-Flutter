@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/src/views/ForgetPass/forget.dart';
 import 'package:news_app/src/views/Sign_Up/sign_up_page.dart';
-
 import 'Components/Banner.dart';
 import 'Components/email.dart';
 import 'Components/login_button.dart';

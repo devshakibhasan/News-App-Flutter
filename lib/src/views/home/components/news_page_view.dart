@@ -67,13 +67,14 @@ class NewsPageView extends StatelessWidget {
                   height: 1000,
                   color: Colors.white,
                   child: Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: Text(
                       '${article.description}',
                       style: TextStyle(
-                        fontSize: 25.0,
+                        fontSize: 23.0,
                         fontFamily: 'Poppins-R',
                       ),
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ),
