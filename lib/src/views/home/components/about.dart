@@ -156,7 +156,7 @@ class AboutPage extends StatelessWidget {
                               Card(
                                 child: ListTile(
                                   title: Text(
-                                    "Sex",
+                                    "Gender",
                                     style: TextStyle(
                                       color: Color(0xffFB8A30),
                                       fontSize: 20.0,
