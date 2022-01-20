@@ -11,15 +11,7 @@ class SUBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Image(
-          fit: BoxFit.cover,
-          height: 125.0,
-          width: double.infinity,
-          // ignore: prefer_const_constructors
-          image: AssetImage(
-            "assets/images/Sign_in.jpg",
-          ),
-        ),
+        
         Padding(
           padding: const EdgeInsets.only(top: 100.0),
           child: Center(

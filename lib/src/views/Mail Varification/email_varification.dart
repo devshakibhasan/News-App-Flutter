@@ -51,17 +51,17 @@ class _Email_varificationState extends State<Email_varification> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color(0xff555FD2),
+        backgroundColor: Color(0xffffffff),
         toolbarHeight: 30.0,
         centerTitle: true,
-        title: Text('Email Verification'),
+        title: Text('Email Verification', style: TextStyle( color: Color(0xffFB8A30),),),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.white,
+             color: Color(0xffFB8A30),
           ),
         ),
       ),
@@ -125,18 +125,7 @@ class _Email_varificationState extends State<Email_varification> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 130.0),
-              child: Image(
-                fit: BoxFit.cover,
-                height: 175.0,
-                width: double.infinity,
-                // ignore: prefer_const_constructors
-                image: AssetImage(
-                  "assets/images/Sign_in_1.jpg",
-                ),
-              ),
-            ),
+          
           ],
         ),
       ),
@@ -170,7 +159,7 @@ class _Email_varificationState extends State<Email_varification> {
                 borderSide: BorderSide(width: 2, color: Colors.black12),
                 borderRadius: BorderRadius.circular(12)),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: Color(0xFF656FD7)),
+                borderSide: BorderSide(width: 2,  color: Color(0xffFB8A30),),
                 borderRadius: BorderRadius.circular(12)),
           ),
         ),

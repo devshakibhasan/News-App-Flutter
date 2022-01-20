@@ -92,7 +92,11 @@ class HomeSlider extends StatelessWidget {
             } else if (snapshot.hasError) {
               throw Text("Exrror");
             }
-            return CircularProgressIndicator();
+            return Center(
+              child: CircularProgressIndicator(
+                color: Color(0xffFB8A30),
+              ),
+            );
           },
         ),
         // Row(

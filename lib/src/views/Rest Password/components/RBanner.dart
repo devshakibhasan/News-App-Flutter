@@ -11,15 +11,7 @@ class RBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Image(
-          fit: BoxFit.cover,
-          height: 125.0,
-          width: double.infinity,
-          // ignore: prefer_const_constructors
-          image: AssetImage(
-            "assets/images/Sign_in.jpg",
-          ),
-        ),
+     
         Padding(
           padding: const EdgeInsets.only(top: 100.0),
           child: Center(
@@ -28,7 +20,7 @@ class RBanner extends StatelessWidget {
                 Text(
                   "Enter New Password",
                   style: TextStyle(
-                    color: Color(0xff555FD2),
+                   color: Color(0xffFB8A30),
                     fontWeight: FontWeight.w700,
                     fontSize: 20.0,
                   ),

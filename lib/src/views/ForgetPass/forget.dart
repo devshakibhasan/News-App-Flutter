@@ -53,17 +53,22 @@ class _MyForgetScreenState extends State<MyForgetScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color(0xff555FD2),
+        backgroundColor:  Color(0xffffffff),
         toolbarHeight: 30.0,
         centerTitle: true,
-        title: Text('Forgot Password'),
+        title: Text(
+          'Forgot Password',
+          style: TextStyle(
+            color: Color(0xffFB8A30),
+          ),
+        ),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.white,
+             color: Color(0xffFB8A30),
           ),
         ),
       ),
@@ -99,18 +104,6 @@ class _MyForgetScreenState extends State<MyForgetScreen> {
                     ),
                   ),
                 ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 177.0),
-              child: Image(
-                fit: BoxFit.cover,
-                height: 175.0,
-                width: double.infinity,
-                // ignore: prefer_const_constructors
-                image: AssetImage(
-                  "assets/images/Sign_in_1.jpg",
-                ),
               ),
             ),
           ],

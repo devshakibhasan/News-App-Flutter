@@ -41,10 +41,10 @@ class _Reset_Pass_testState extends State<Reset_Pass_test> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color(0xff555FD2),
+        backgroundColor: Color(0xffffffff),
         toolbarHeight: 30.0,
         centerTitle: true,
-        title: Text('Reset Password'),
+        title: Text('Reset Password', style: TextStyle( color: Color(0xffFB8A30),),),
       ),
       body: SingleChildScrollView(
         controller: null,
@@ -135,18 +135,7 @@ class _Reset_Pass_testState extends State<Reset_Pass_test> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 90.0),
-              child: Image(
-                fit: BoxFit.cover,
-                height: 175.0,
-                width: double.infinity,
-                // ignore: prefer_const_constructors
-                image: AssetImage(
-                  "assets/images/Sign_in_1.jpg",
-                ),
-              ),
-            ),
+           
           ],
         ),
       ),
@@ -163,7 +152,7 @@ class _Reset_Pass_testState extends State<Reset_Pass_test> {
               child: Checkbox(
                 value: rememberpwd,
                 checkColor: Colors.white,
-                activeColor: Color(0xff555FD2),
+                activeColor:  Color(0xffFB8A30),
                 onChanged: (value) {
                   setState(() {
                     rememberpwd = value!;
@@ -196,7 +185,7 @@ class _Reset_Pass_testState extends State<Reset_Pass_test> {
           "Forget Password !",
           style: TextStyle(
             fontWeight: FontWeight.w500,
-            color: Color(0xff555fd2),
+             color: Color(0xffFB8A30),
           ),
         ),
       ),

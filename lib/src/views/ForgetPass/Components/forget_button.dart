@@ -32,8 +32,8 @@ class ForgetPassButton extends StatelessWidget {
           gradient: LinearGradient(
             // ignore: prefer_const_literals_to_create_immutables
             colors: [
-              Color(0xff555FD2),
-              Color(0xff555FD2),
+                Color(0xffFB8A30),
+                Color(0xffFB8A30),
             ],
           ),
         ),

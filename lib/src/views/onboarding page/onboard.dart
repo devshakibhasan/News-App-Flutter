@@ -20,7 +20,7 @@ class _OnBoardState extends State<OnBoard> {
       desc:
           "Breaking news, interchangeably termed late-breaking news and also known as a special report or special coverage or news flash, is a current issue that broadcasters feel warrants the interruption of scheduled programming or current news in order to report its details.",
       bg: Colors.red,
-      button: Color(0xFF4756DF),
+      button:   Color(0xffFB8A30),
     ),
     OnboardModel(
       img: 'assets/images/lt-news.png',
@@ -36,7 +36,7 @@ class _OnBoardState extends State<OnBoard> {
       desc:
           "Common topics for news reports include war, government, politics, education, health, the environment, economy, business, fashion, and entertainment, as well as athletic events, quirky or unusual events. Government proclamations, concerning royal ceremonies, laws, taxes, public health, and criminals, have been dubbed news since ancient times. ",
       bg: Colors.green,
-      button: Color(0xFF4756DF),
+      button:  Color(0xffFB8A30),
     ),
   ];
 

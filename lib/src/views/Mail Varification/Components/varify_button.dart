@@ -29,8 +29,8 @@ class MYVarifyButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.0),
             // ignore: prefer_const_literals_to_create_immutables
             gradient: LinearGradient(colors: [
-              Color(0xff555FD2),
-              Color(0xff555FD2),
+             Color(0xffFB8A30),
+             Color(0xffFB8A30),
             ])),
         padding: const EdgeInsets.all(0),
         child: Text(

@@ -229,7 +229,7 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
               child: Checkbox(
                 value: rememberpwd,
                 checkColor: Colors.white,
-                activeColor: Color(0xff555FD2),
+                activeColor:  Color(0xffFB8A30),
                 onChanged: (value) {
                   setState(() {
                     rememberpwd = value!;
@@ -262,7 +262,7 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
           "Forget Password !",
           style: TextStyle(
             fontWeight: FontWeight.w500,
-            color: Color(0xff555fd2),
+             color: Color(0xffFB8A30),
           ),
         ),
       ),

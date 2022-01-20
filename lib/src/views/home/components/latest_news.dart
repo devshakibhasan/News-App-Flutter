@@ -110,7 +110,7 @@ class _Latest_newsState extends State<Latest_news> {
             }
             return Align(
               alignment: Alignment.topCenter,
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator( color: Color(0xffFB8A30),),
             );
           },
       ),

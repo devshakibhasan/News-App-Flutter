@@ -139,13 +139,14 @@ class AboutPage extends StatelessWidget {
                                   title: Text(
                                     "Name",
                                     style: TextStyle(
-                                        color: Color(0xffFB8A30),
-                                        fontSize: 20.0),
+                                      color: Color(0xffFB8A30),
+                                      fontSize: 20.0,
+                                    ),
                                   ),
                                   subtitle: Text(
                                     "Md. Shakib Hasan Patwary",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.black87,
                                       fontSize: 15.0,
                                       fontFamily: 'Poppins',
                                     ),

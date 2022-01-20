@@ -56,11 +56,20 @@ class _SignUp_PageState extends State<SignUp_Page> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(
+          Icons.arrow_back,
+          color: Color(0xffFB8A30),
+        ),
         elevation: 0.0,
-        backgroundColor: Color(0xff555FD2),
-        toolbarHeight: 30.0,
+        backgroundColor: Color(0xffffffff),
+        toolbarHeight: 50.0,
         centerTitle: true,
-        title: Text('Sign Up'),
+        title: Text(
+          'Sign Up',
+          style: TextStyle(
+            color: Color(0xffFB8A30),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         controller: null,
@@ -163,15 +172,6 @@ class _SignUp_PageState extends State<SignUp_Page> {
             ),
             Stack(
               children: <Widget>[
-                Image(
-                  fit: BoxFit.cover,
-                  height: 170.0,
-                  width: double.infinity,
-                  // ignore: prefer_const_constructors
-                  image: AssetImage(
-                    "assets/images/Sign_in_1.jpg",
-                  ),
-                ),
                 Padding(
                   padding: EdgeInsets.only(top: 60.0),
                   child: TextButton(
@@ -186,14 +186,14 @@ class _SignUp_PageState extends State<SignUp_Page> {
                             TextSpan(
                               text: 'Already have an account?',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontSize: 15.0,
                               ),
                             ),
                             TextSpan(
                               text: '  Sign In ',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Color(0xffFB8A30),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15.0,
                               ),
@@ -222,7 +222,7 @@ class _SignUp_PageState extends State<SignUp_Page> {
               child: Checkbox(
                 value: rememberpwd,
                 checkColor: Colors.white,
-                activeColor: Color(0xff555FD2),
+                activeColor:  Color(0xffFB8A30),
                 onChanged: (value) {
                   setState(() {
                     rememberpwd = value!;
@@ -255,7 +255,7 @@ class _SignUp_PageState extends State<SignUp_Page> {
           "Forget Password !",
           style: TextStyle(
             fontWeight: FontWeight.w500,
-            color: Color(0xff555fd2),
+            color: Color(0xffFB8A30),
           ),
         ),
       ),

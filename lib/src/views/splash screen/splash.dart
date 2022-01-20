@@ -54,7 +54,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
             ),
             CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(
-                Color(0xff533E99),
+                  Color(0xffFB8A30),
               ),
             )
           ],
